@@ -1,4 +1,4 @@
-src/main/java/org/flasshka/finapi/Secret.java
+src/main/java/org/flasshka/finapi/Security.java
 
 target/
 !.mvn/wrapper/maven-wrapper.jar

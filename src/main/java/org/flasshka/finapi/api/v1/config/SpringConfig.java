@@ -1,6 +1,6 @@
 package org.flasshka.finapi.api.v1.config;
 
-import org.flasshka.finapi.api.Secret;
+import org.flasshka.finapi.Security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,16 +11,16 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan("org.flasshka.finapi.api.v1")
+@ComponentScan("org.flasshka.finapi")
 @EnableWebMvc
 public class SpringConfig {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
-        ds.setUrl(Secret.DAO.URL);
-        ds.setUsername(Secret.DAO.USERNAME);
-        ds.setPassword(Secret.DAO.PASSWORD);
+        ds.setUrl(Security.DAO.URL);
+        ds.setUsername(Security.DAO.USERNAME);
+        ds.setPassword(Security.DAO.PASSWORD);
 
         return ds;
     }
